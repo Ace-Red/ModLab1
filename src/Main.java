@@ -13,6 +13,7 @@ public class Main {
             }
         }
         Generator1.gistograma(arr,50);
-        Generator1.midValue(arr);
+        double midValue = Generator1.midValue(arr);
+        double variance = Generator1.variance(arr,midValue);
     }
 }

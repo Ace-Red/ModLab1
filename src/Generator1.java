@@ -21,7 +21,7 @@ public class Generator1 {
         System.out.println(h);
         // кількість влучень випадкової величини в цей інтервал
         int[] countNi = new int[k];
-        double newH = h;
+        double newH = h+0.0001;
         double prevH = 0;
         for (int i = 0; i < countNi.length; i++) {
             int count = 0;
@@ -40,13 +40,23 @@ public class Generator1 {
         }
         System.out.println();
     }
-    public static void midValue(double[] arr){
+    public static double midValue(double[] arr){
         double value = 0;
         for (double v : arr) {
             value += v;
         }
         System.out.println("------------------------------");
         System.out.println(value/arr.length);
+        return value/arr.length;
+    }
+    public static double variance(double[] x, double midValue){
+        double result = 0;
+        for (double v : x) {
+            result = result + (Math.pow((v - midValue), 2) / x.length);
+        }
+        System.out.println("------------------------------");
+        System.out.println(result);
+        return result;
     }
 
 }
